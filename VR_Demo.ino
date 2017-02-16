@@ -8,8 +8,8 @@
 //
 #include "VR_86Duino.h"
 #include <UTFT.h>
-#include <vector>
 #include <typeinfo>
+#include <typeindex>
 
 #define RS_PIN 21
 #define WR_PIN 22
