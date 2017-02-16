@@ -11,8 +11,8 @@
 
 #include "Arduino.h"
 #include <UTFT.h>
-#include <vector>
 #include <typeinfo>
+#include <typeindex>
 
 //
 // An empty base class from which all drawable objects are
@@ -21,6 +21,8 @@
 //
 class DrawableObject
 {
+  public:
+  double Tuple[3];
 };
 
 class Vector;
@@ -71,14 +73,15 @@ class Camera
   // the following are the minimum and maximum bounds of X, Y,
   // and Z respectively
   int MinX;
-  int MaxY;
+  int MaxX;
   int MinY;
   int MaxY;
   int MinZ;
   int MaxZ;
 
   // array of all existent objects
-  std::vector<DrawableObject> ObjectsInWorld;
+  DrawableObject * ObjectsInWorld;
+  int ObjectsInWorldSize;
 
   // functions
   void DrawScene(UTFT screen);
