@@ -232,6 +232,29 @@ double Math::ConvertDegreesToRadians(double degrees_val)
 }
 
 //
+// Camera class constructor.
+//
+Camera::Camera()
+{
+  this->ObjectsInWorldSize = 0;
+}
+
+//
+// Camera class constructor.
+//
+Camera::Camera(int min_x, int max_x, int min_y, int max_y, int min_z, int max_z)
+{
+  this->MinX = min_x;
+  this->MaxX = max_x;
+  this->MinY = min_y;
+  this->MaxY = max_y;
+  this->MinZ = min_z;
+  this->MaxZ = max_z;
+
+  this->ObjectsInWorldSize = 0;
+}
+
+//
 // Draws all objects in world.
 //
 void Camera::DrawScene(UTFT screen)
