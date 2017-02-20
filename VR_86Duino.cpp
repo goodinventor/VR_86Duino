@@ -10,7 +10,7 @@
 #include "VR_86Duino.h"
 #include <UTFT.h>
 #include <typeinfo>
-#include <typeindex>
+#include <string>
 
 //
 // Point class constructor.
@@ -260,14 +260,12 @@ Camera::Camera(int min_x, int max_x, int min_y, int max_y, int min_z, int max_z)
 void Camera::DrawScene(UTFT screen)
 {
   // reference typeids
-  const std::type_info& point_type = typeid(Point);
+  string PointType = typeid(Point).name();
 
   // loop through the objects in world and check the typeid
   for (int i = 0; i < this->ObjectsInWorldSize; i++)
   {
-    const std::type_info& object_type = typeid(this->ObjectsInWorld[i]);
-
-    if (std::type_index(object_type) == std::type_index(point_type))
+    if (typeid(this->ObjectsInWorld[i]).name() == PointType)
     {
       // reference point to print
       Point current_point(0, 0, 0);
@@ -275,7 +273,7 @@ void Camera::DrawScene(UTFT screen)
       // copy values over
       for (int j = 0; j < 3; j++)
       {
-        current_point.Tuple[i] = this->ObjectsInWorld[j].Tuple[j];
+        current_point.Tuple[j] = this->ObjectsInWorld[i].Tuple[j];
       }
       
       // draw the point
