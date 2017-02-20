@@ -12,7 +12,7 @@
 #include "Arduino.h"
 #include <UTFT.h>
 #include <typeinfo>
-#include <typeindex>
+#include <string>
 
 //
 // An empty base class from which all drawable objects are
