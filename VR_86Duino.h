@@ -10,9 +10,9 @@
 #define VR_86Duino_h
 
 #include "Arduino.h"
-#include <UTFT.h>
 #include <typeinfo>
 #include <string>
+#include <UTFT.h>
 
 //
 // An empty base class from which all drawable objects are
