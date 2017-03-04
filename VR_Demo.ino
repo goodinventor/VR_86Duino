@@ -7,9 +7,9 @@
 // VR_86Duino library.
 //
 #include "VR_86Duino.h"
-#include <UTFT.h>
 #include <typeinfo>
 #include <string>
+#include <UTFT.h>
 
 #define RS_PIN 21
 #define WR_PIN 22
