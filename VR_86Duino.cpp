@@ -260,7 +260,7 @@ Camera::Camera(int min_x, int max_x, int min_y, int max_y, int min_z, int max_z)
 void Camera::DrawScene(UTFT screen)
 {
   // reference typeids
-  string PointType = typeid(Point).name();
+  std::string PointType = typeid(Point).name();
 
   // loop through the objects in world and check the typeid
   for (int i = 0; i < this->ObjectsInWorldSize; i++)
